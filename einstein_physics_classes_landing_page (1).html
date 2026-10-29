@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einstein Physics Classes | Premier NEET, IIT-JEE & Competitive Exam Coaching</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#030712',
+                            card: '#0B1329',
+                            cyan: '#00F0FF',
+                            neon: '#38BDF8',
+                            purple: '#818CF8',
+                            gold: '#FBBF24',
+                            emerald: '#34D399'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin-slow': 'spin 18s linear infinite',
+                        'float': 'float 6s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030712;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00F0FF;
+        }
+        /* Glowing effects & modern glassmorphism */
+        .glass-card {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(11, 19, 41, 0.85) 100%);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(56, 189, 248, 0.12);
+        }
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.35);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 35px -8px rgba(0, 240, 255, 0.28);
+        }
+        .glow-purple {
+            box-shadow: 0 0 35px -8px rgba(129, 140, 248, 0.25);
+        }
+        .glow-gold {
+            box-shadow: 0 0 30px -8px rgba(251, 191, 36, 0.25);
+        }
+        .gradient-text-cyan {
+            background: linear-gradient(135deg, #00F0FF 0%, #38BDF8 50%, #818CF8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text-gold {
+            background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-[#030712] text-slate-100 antialiased overflow-x-hidden selection:bg-cyan-400 selection:text-black">
+
+    <!-- Ambient Background Light Orbs -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-cyan-600/15 via-blue-600/10 to-indigo-600/10 rounded-full blur-[140px]"></div>
+        <div class="absolute top-[40%] -right-40 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[140px]"></div>
+        <div class="absolute top-[70%] -left-40 w-[500px] h-[500px] bg-cyan-600/10 rounded-full blur-[140px]"></div>
+    </div>
+
+    <!-- Top Announcement Bar (High Impact & Clean) -->
+    <div class="relative z-50 bg-gradient-to-r from-blue-950 via-indigo-950 to-slate-950 text-xs py-2 px-3 sm:px-4 border-b border-cyan-500/20">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1.5 sm:gap-2 text-center">
+            <div class="flex items-center gap-2 flex-wrap justify-center">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-gradient-to-r from-yellow-400 to-amber-500 text-black shadow-sm shrink-0">
+                    <span class="w-1.5 h-1.5 rounded-full bg-black animate-ping"></span>
+                    ADMISSIONS OPEN 2026-27
+                </span>
+                <span class="text-slate-300 text-[11px] sm:text-xs leading-tight">
+                    New Target Batches for <strong class="text-cyan-300 font-bold">NEET (170+ Mission)</strong> & <strong class="text-white font-bold">IIT-JEE Main/Adv</strong>
+                </span>
+            </div>
+            <a href="#contact" class="inline-flex items-center gap-1 text-[11px] sm:text-xs font-extrabold text-cyan-400 hover:text-cyan-300 transition-colors">
+                <span>Reserve Free Demo Seat</span>
+                <i class="fa-solid fa-arrow-right text-[10px] ml-0.5"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Sticky Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-[#030712]/90 backdrop-blur-xl border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-indigo-600 p-[1.5px] shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-400/40 transition-all">
+                        <div class="w-full h-full bg-[#030712] rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-atom text-cyan-400 text-lg sm:text-2xl group-hover:rotate-180 transition-transform duration-700"></i>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-black text-base sm:text-xl tracking-tight text-white leading-tight">
+                            Einstein <span class="gradient-text-cyan font-extrabold">Physics</span>
+                        </span>
+                        <span class="text-[8px] sm:text-[9.5px] tracking-widest uppercase text-slate-400 font-bold leading-tight">
+                            NEET • IIT-JEE • BOARDS
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Items -->
+                <nav class="hidden lg:flex items-center gap-6 xl:gap-7 text-xs font-semibold uppercase tracking-wider text-slate-300">
+                    <a href="#home" class="hover:text-cyan-400 transition-colors">Home</a>
+                    <a href="#mentor-chandan" class="hover:text-cyan-400 transition-colors">Chandan Sir</a>
+                    <a href="#syllabus" class="hover:text-cyan-400 transition-colors">Syllabus</a>
+                    <a href="#courses" class="hover:text-cyan-400 transition-colors">Batches</a>
+                    <a href="#faculty" class="hover:text-cyan-400 transition-colors">Mentors</a>
+                    <a href="#results" class="hover:text-cyan-400 transition-colors">Selections</a>
+                    <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Actions / CTA -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <a href="tel:+919876543210" class="text-xs font-bold text-slate-300 flex items-center gap-2 hover:text-cyan-400 transition-colors bg-slate-900/80 px-3.5 py-2 rounded-xl border border-slate-800">
+                        <i class="fa-solid fa-phone text-cyan-400 text-xs"></i>
+                        <span class="hidden xl:inline">+91 98765 43210</span>
+                        <span class="xl:hidden">Call Now</span>
+                    </a>
+                    <button onclick="openEnquiryModal('Free Demo Class Request')" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-400 via-cyan-500 to-blue-600 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg shadow-cyan-500/25 hover:shadow-cyan-400/40 hover:scale-[1.02] active:scale-95 transition-all">
+                        Book Free Demo
+                    </button>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="flex lg:hidden items-center gap-2">
+                    <button onclick="openEnquiryModal('Free Demo Booking')" class="sm:hidden px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 font-extrabold text-xs shadow-md shadow-cyan-500/20">
+                        Demo
+                    </button>
+                    <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="text-slate-300 hover:text-white p-2.5 rounded-xl bg-slate-900 border border-slate-800 focus:outline-none">
+                        <i id="menuIcon" class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-800/80 bg-[#070e24]/95 backdrop-blur-2xl px-4 pt-3 pb-6 space-y-2 transition-all duration-300">
+            <a href="#home" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-slate-200 hover:bg-slate-800 hover:text-cyan-400 font-semibold text-sm">Home</a>
+            <a href="#mentor-chandan" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-slate-200 hover:bg-slate-800 hover:text-cyan-400 font-semibold text-sm">Chandan Kumar Sir (HOD)</a>
+            <a href="#syllabus" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-slate-200 hover:bg-slate-800 hover:text-cyan-400 font-semibold text-sm">Physics Modules & Breakdown</a>
+            <a href="#courses" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-slate-200 hover:bg-slate-800 hover:text-cyan-400 font-semibold text-sm">NEET & JEE Batches</a>
+            <a href="#faculty" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-slate-200 hover:bg-slate-800 hover:text-cyan-400 font-semibold text-sm">Mentorship Panel</a>
+            <a href="#founder" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-slate-200 hover:bg-slate-800 hover:text-cyan-400 font-semibold text-sm">Founding Mentor</a>
+            <a href="#results" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-slate-200 hover:bg-slate-800 hover:text-cyan-400 font-semibold text-sm">Selections & Toppers</a>
+            <a href="#contact" class="mobile-nav-link block py-2.5 px-3.5 rounded-xl text-slate-200 hover:bg-slate-800 hover:text-cyan-400 font-semibold text-sm">Contact & Location</a>
+            <div class="pt-3 border-t border-slate-800 flex flex-col gap-2.5">
+                <a href="tel:+919876543210" class="py-2.5 px-3 rounded-xl bg-slate-900 border border-slate-800 text-center font-bold text-slate-300 flex items-center justify-center gap-2 text-xs">
+                    <i class="fa-solid fa-phone text-cyan-400"></i> +91 98765 43210
+                </a>
+                <button onclick="openEnquiryModal('Mobile Navbar Demo Booking')" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-400 via-cyan-500 to-blue-600 text-slate-950 font-black text-center shadow-lg shadow-cyan-500/20 text-xs uppercase tracking-wider">
+                    Book Free 3-Day Demo
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+        <!-- Hero Section -->
+        <section id="home" class="relative pt-8 pb-16 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    
+                    <!-- Left Copy Column -->
+                    <div class="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
+                        
+                        <!-- Pulsing Status Pill -->
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-cyan-300 text-xs font-semibold shadow-inner">
+                            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping shrink-0"></span>
+                            <span>Guided by Chandan Kumar Sir • NEET & IIT-JEE Specialist</span>
+                        </div>
+
+                        <!-- Main Heading with Gradient Text -->
+                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+                            Turn Physics Into Your <br class="hidden sm:inline">
+                            <span class="gradient-text-cyan">Highest-Scoring</span> Subject!
+                        </h1>
+
+                        <p class="text-sm sm:text-base lg:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                            No cramming, no rote formulas. Master deep conceptual visualization, calculus-based derivations, and speed numericals with <strong class="text-white font-bold">Chandan Kumar Sir</strong>. Dedicated batches to achieve <span class="text-yellow-400 font-extrabold">170+/180 in NEET</span> and 99+ percentile in <span class="text-cyan-300 font-extrabold">JEE Main & Advanced</span>.
+                        </p>
+
+                        <!-- Key Hero Points with Modern Glass Finish -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 text-left pt-1">
+                            <div class="flex items-center gap-2.5 text-xs text-slate-200 glass-card p-3 rounded-2xl">
+                                <div class="w-6 h-6 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 shrink-0">
+                                    <i class="fa-solid fa-stethoscope text-xs"></i>
+                                </div>
+                                <span class="font-medium">NEET 170+ Mission</span>
+                            </div>
+                            <div class="flex items-center gap-2.5 text-xs text-slate-200 glass-card p-3 rounded-2xl">
+                                <div class="w-6 h-6 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 shrink-0">
+                                    <i class="fa-solid fa-atom text-xs"></i>
+                                </div>
+                                <span class="font-medium">JEE Adv Multi-Concept</span>
+                            </div>
+                            <div class="flex items-center gap-2.5 text-xs text-slate-200 glass-card p-3 rounded-2xl">
+                                <div class="w-6 h-6 rounded-lg bg-yellow-500/10 flex items-center justify-center text-yellow-400 shrink-0">
+                                    <i class="fa-solid fa-book-open text-xs"></i>
+                                </div>
+                                <span class="font-medium">HC Verma + Irodov Drills</span>
+                            </div>
+                        </div>
+
+                        <!-- CTA Actions -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-3">
+                            <button onclick="openEnquiryModal('Chandan Sir Demo Class')" class="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-gradient-to-r from-cyan-400 via-cyan-500 to-blue-600 text-slate-950 font-black text-xs sm:text-sm shadow-xl shadow-cyan-500/25 hover:shadow-cyan-400/40 hover:scale-[1.02] active:scale-95 transition-all">
+                                🚀 Book 3 Days Free Demo Class
+                            </button>
+                            <a href="#courses" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl glass-card hover:border-cyan-400 text-slate-200 text-xs sm:text-sm font-bold text-center transition-all flex items-center justify-center gap-2">
+                                <span>Explore Batches</span>
+                                <i class="fa-solid fa-chevron-right text-xs text-cyan-400"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Interactive Feature Card -->
+                    <div class="lg:col-span-5">
+                        <div class="p-6 sm:p-8 rounded-3xl glass-card glow-cyan relative overflow-hidden">
+                            <!-- Background gradient flare -->
+                            <div class="absolute -top-12 -right-12 w-40 h-40 bg-cyan-500/20 rounded-full blur-2xl"></div>
+
+                            <div class="flex items-center justify-between mb-5 sm:mb-6">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-cyan-400/10 text-cyan-300 border border-cyan-400/20 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-medal text-cyan-400"></i> Guided by Chandan Sir
+                                </span>
+                                <span class="text-xs text-yellow-400 font-extrabold flex items-center gap-1">
+                                    <i class="fa-solid fa-star"></i> 4.95/5 Rating
+                                </span>
+                            </div>
+
+                            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Exclusively Specialized in Physics</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-5">
+                                Physics alone determines medical college seats and top IIT branches. We convert fears into highest-scoring ranks through intuition and mathematical clarity.
+                            </p>
+
+                            <!-- Modern Interactive Chips -->
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between p-3.5 rounded-2xl bg-slate-900/90 border border-emerald-500/30 text-xs">
+                                    <span class="text-slate-200 flex items-center gap-2.5 font-medium">
+                                        <div class="w-7 h-7 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 shrink-0">
+                                            <i class="fa-solid fa-stethoscope"></i>
+                                        </div>
+                                        NEET (Medical UG) Batch
+                                    </span>
+                                    <span class="text-emerald-400 font-extrabold bg-emerald-500/10 px-2.5 py-1 rounded-lg">170+ Target</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3.5 rounded-2xl bg-slate-900/90 border border-cyan-500/30 text-xs">
+                                    <span class="text-slate-200 flex items-center gap-2.5 font-medium">
+                                        <div class="w-7 h-7 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 shrink-0">
+                                            <i class="fa-solid fa-atom"></i>
+                                        </div>
+                                        IIT-JEE (Main + Adv)
+                                    </span>
+                                    <span class="text-cyan-300 font-extrabold bg-cyan-500/10 px-2.5 py-1 rounded-lg">Top 1% Percentile</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3.5 rounded-2xl bg-slate-900/90 border border-yellow-500/30 text-xs">
+                                    <span class="text-slate-200 flex items-center gap-2.5 font-medium">
+                                        <div class="w-7 h-7 rounded-lg bg-yellow-500/10 flex items-center justify-center text-yellow-400 shrink-0">
+                                            <i class="fa-solid fa-graduation-cap"></i>
+                                        </div>
+                                        Foundation (11th & 12th)
+                                    </span>
+                                    <span class="text-yellow-400 font-extrabold bg-yellow-500/10 px-2.5 py-1 rounded-lg">Boards + JEE</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                                <span class="flex items-center gap-1.5">
+                                    <i class="fa-solid fa-check-double text-cyan-400"></i> HC Verma & Irodov Modules
+                                </span>
+                                <span class="text-cyan-400 font-bold">New Batch Starting</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Dedicated Mentor Profile for Chandan Kumar Sir (HOD) -->
+        <section id="mentor-chandan" class="py-12 sm:py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="glass-card rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden glow-cyan">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                        
+                        <!-- Faculty Photo / Badge Column -->
+                        <div class="lg:col-span-5 flex flex-col items-center justify-center">
+                            <div class="relative w-full max-w-xs sm:max-w-sm flex flex-col items-center">
+                                <div class="w-full rounded-3xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-indigo-600 p-[2px] shadow-2xl">
+                                    <div class="w-full rounded-[22px] bg-slate-950 flex flex-col items-center justify-center text-center p-6 sm:p-8">
+                                        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 flex items-center justify-center text-3xl sm:text-4xl text-slate-950 mb-3.5 shadow-xl font-black shrink-0">
+                                            CK
+                                        </div>
+                                        <div class="text-xl sm:text-2xl font-black text-white tracking-tight leading-snug">Chandan Kumar Sir</div>
+                                        <p class="text-xs sm:text-sm text-cyan-400 font-semibold mt-1">NEET & IIT-JEE Physics Mentor</p>
+                                        <div class="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-yellow-400/10 text-yellow-300 text-[11px] sm:text-xs font-bold border border-yellow-400/20 max-w-full text-center">
+                                            <i class="fa-solid fa-award shrink-0 text-yellow-400"></i> 
+                                            <span>10+ Years Mentoring Top Ranks</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Floating Badge (Mobile in-flow, Desktop absolute) -->
+                                <div class="mt-3 sm:mt-0 sm:absolute sm:-bottom-4 sm:-right-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-2.5 px-4 rounded-2xl shadow-xl flex items-center gap-3 border border-cyan-400/30 z-10 w-full sm:w-auto justify-center sm:justify-start">
+                                    <i class="fa-solid fa-user-doctor text-xl sm:text-2xl text-emerald-300 shrink-0"></i>
+                                    <div class="text-left">
+                                        <div class="text-xs font-bold leading-tight">500+ Selections</div>
+                                        <div class="text-[10px] text-cyan-100">In MBBS & Top IITs</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Faculty Bio Column -->
+                        <div class="lg:col-span-7 space-y-4 sm:space-y-6 pt-2 lg:pt-0">
+                            <div>
+                                <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400">Head of Physics Department</span>
+                                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white mt-1 leading-tight break-words">
+                                    "When concepts are visualized, Physics becomes your highest-scoring subject."
+                                </h2>
+                            </div>
+                            <p class="text-slate-300 text-xs sm:text-sm lg:text-base leading-relaxed">
+                                <strong class="text-white">Chandan Kumar Sir</strong> is widely celebrated by NEET and IIT-JEE rank holders for simplifying abstract physics into clear mental pictures. Having guided hundreds of aspirants into <strong class="text-cyan-300">AIIMS, Top Govt Medical Colleges, IIT Bombay, IIT Delhi</strong>, his systematic approach breaks through the toughest problems of Irodov, HC Verma, and DC Pandey with ease.
+                            </p>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-1">
+                                <div class="p-4 rounded-2xl bg-slate-900/80 border border-emerald-500/30">
+                                    <h3 class="text-emerald-400 font-bold text-xs sm:text-sm mb-1 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-stethoscope"></i> NEET 170+ Target System
+                                    </h3>
+                                    <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">Speed and elimination drills designed to complete 45 questions within 45 minutes.</p>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-slate-900/80 border border-cyan-500/30">
+                                    <h3 class="text-cyan-400 font-bold text-xs sm:text-sm mb-1 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-atom"></i> JEE Advanced Multi-Concept
+                                    </h3>
+                                    <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">Linking Mechanics, Electrodynamics & Optics into unified problem-solving models.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
+                                <button onclick="openEnquiryModal('Counseling with Chandan Sir')" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-600 text-slate-950 font-black text-xs sm:text-sm hover:scale-[1.02] active:scale-95 transition-all text-center shadow-lg shadow-cyan-500/20">
+                                    Book 1-on-1 Guidance with Chandan Sir
+                                </button>
+                                <span class="text-[11px] sm:text-xs text-slate-400 flex items-center justify-center sm:justify-start gap-2">
+                                    <i class="fa-solid fa-shield-halved text-emerald-400 shrink-0"></i> Free diagnostic counseling for every aspirant
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Physics Topic Syllabus Breakdown Section -->
+        <section id="syllabus" class="py-16 sm:py-20 relative border-t border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400">Curriculum Blueprint</span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white mt-1">
+                        High-Yield Physics Domains We Master
+                    </h2>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-2 sm:mt-3">
+                        100% focused on Competitive Physics domains. Every lecture incorporates formula shortcuts, visual models, and previous 20-year PYQ patterns.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+                    <!-- Module 1 -->
+                    <div class="p-5 sm:p-6 rounded-3xl glass-card hover:border-cyan-400/60 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-11 h-11 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-lg">
+                                    <i class="fa-solid fa-gauge-high"></i>
+                                </div>
+                                <span class="text-[11px] font-bold text-yellow-400 bg-yellow-400/10 px-2.5 py-1 rounded-full border border-yellow-400/20">High Weightage</span>
+                            </div>
+                            <h3 class="text-base sm:text-lg font-bold text-white mb-2">1. Mechanics & Dynamics (यांत्रिकी)</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-4">Kinematics, Newton’s Laws, Circular Motion, Gravitation, Work, Energy & Power with speed calculation shortcuts.</p>
+                        </div>
+                        <div class="text-[11px] sm:text-xs text-cyan-300 font-mono bg-slate-950/80 p-2.5 rounded-xl border border-cyan-500/20 overflow-x-auto">
+                            Key: v² = u² + 2as | W = F·s·cosθ
+                        </div>
+                    </div>
+
+                    <!-- Module 2 -->
+                    <div class="p-5 sm:p-6 rounded-3xl glass-card hover:border-blue-400/60 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-11 h-11 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-lg">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <span class="text-[11px] font-bold text-cyan-400 bg-cyan-400/10 px-2.5 py-1 rounded-full border border-cyan-400/20">Core Numerical Base</span>
+                            </div>
+                            <h3 class="text-base sm:text-lg font-bold text-white mb-2">2. Current Electricity & Magnetism</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-4">Ohm’s law, Kirchhoff's laws, series/parallel combinations, domestic electric circuits, heating effect & EMI.</p>
+                        </div>
+                        <div class="text-[11px] sm:text-xs text-cyan-300 font-mono bg-slate-950/80 p-2.5 rounded-xl border border-blue-500/20 overflow-x-auto">
+                            Key: V = IR | H = I²Rt | P = V²/R
+                        </div>
+                    </div>
+
+                    <!-- Module 3 -->
+                    <div class="p-5 sm:p-6 rounded-3xl glass-card hover:border-purple-400/60 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-11 h-11 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-lg">
+                                    <i class="fa-solid fa-glasses"></i>
+                                </div>
+                                <span class="text-[11px] font-bold text-purple-400 bg-purple-400/10 px-2.5 py-1 rounded-full border border-purple-400/20">NEET / JEE Core</span>
+                            </div>
+                            <h3 class="text-base sm:text-lg font-bold text-white mb-2">3. Optics & Wave Optics (प्रकाशिकी)</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-4">Reflection, Refraction, Concave/Convex Mirrors & Lenses, Total Internal Reflection (TIR), Interference & Diffraction.</p>
+                        </div>
+                        <div class="text-[11px] sm:text-xs text-cyan-300 font-mono bg-slate-950/80 p-2.5 rounded-xl border border-purple-500/20 overflow-x-auto">
+                            Key: 1/f = 1/v + 1/u | Power = 100/f(cm)
+                        </div>
+                    </div>
+
+                    <!-- Module 4 -->
+                    <div class="p-5 sm:p-6 rounded-3xl glass-card hover:border-rose-400/60 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-11 h-11 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center font-bold text-lg">
+                                    <i class="fa-solid fa-fire"></i>
+                                </div>
+                                <span class="text-[11px] font-bold text-rose-400 bg-rose-400/10 px-2.5 py-1 rounded-full border border-rose-400/20">Concept Intensive</span>
+                            </div>
+                            <h3 class="text-base sm:text-lg font-bold text-white mb-2">4. Thermodynamics & Kinetic Theory</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-4">First & Second Laws, Carnot Engine efficiency, PV diagrams, Specific heat, Latent heat and heat transfer.</p>
+                        </div>
+                        <div class="text-[11px] sm:text-xs text-cyan-300 font-mono bg-slate-950/80 p-2.5 rounded-xl border border-rose-500/20 overflow-x-auto">
+                            Key: ΔQ = ΔU + ΔW | η = 1 - (T₂/T₁)
+                        </div>
+                    </div>
+
+                    <!-- Module 5 -->
+                    <div class="p-5 sm:p-6 rounded-3xl glass-card hover:border-amber-400/60 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-11 h-11 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg">
+                                    <i class="fa-solid fa-water"></i>
+                                </div>
+                                <span class="text-[11px] font-bold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-full border border-amber-400/20">Frequent PYQs</span>
+                            </div>
+                            <h3 class="text-base sm:text-lg font-bold text-white mb-2">5. Oscillations & Waves (SHM)</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-4">Simple Harmonic Motion, Pendulum equations, Doppler Effect in sound, Resonance and Standing Waves in organ pipes.</p>
+                        </div>
+                        <div class="text-[11px] sm:text-xs text-cyan-300 font-mono bg-slate-950/80 p-2.5 rounded-xl border border-amber-500/20 overflow-x-auto">
+                            Key: T = 2π√(l/g) | f' = f(v±v₀)/(v∓vₛ)
+                        </div>
+                    </div>
+
+                    <!-- Module 6 -->
+                    <div class="p-5 sm:p-6 rounded-3xl glass-card hover:border-emerald-400/60 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-11 h-11 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-lg">
+                                    <i class="fa-solid fa-satellite-dish"></i>
+                                </div>
+                                <span class="text-[11px] font-bold text-emerald-400 bg-emerald-400/10 px-2.5 py-1 rounded-full border border-emerald-400/20">High ROI</span>
+                            </div>
+                            <h3 class="text-base sm:text-lg font-bold text-white mb-2">6. Modern Physics & Semiconductors</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-4">Photoelectric effect, Bohr’s atomic model, Nuclear fission/fusion, Logic gates, Diodes and Zener diode regulators.</p>
+                        </div>
+                        <div class="text-[11px] sm:text-xs text-cyan-300 font-mono bg-slate-950/80 p-2.5 rounded-xl border border-emerald-500/20 overflow-x-auto">
+                            Key: E = hν - φ₀ | rₙ ∝ n²/Z
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Faculty & Mentors Section -->
+        <section id="faculty" class="py-16 sm:py-20 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12">
+                    <div>
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400">Academic Leadership</span>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white mt-1">Chandan Kumar Sir & Mentors Panel</h2>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-2 max-w-2xl">
+                            Headed by <strong>Chandan Kumar Sir</strong>, our Physics department features problem trainers, numerical experts, and doubt mentors. Add new educators dynamically anytime!
+                        </p>
+                    </div>
+
+                    <!-- Add Teacher Action Button -->
+                    <div class="mt-5 md:mt-0 flex items-center">
+                        <button onclick="openAddFacultyModal()" class="w-full sm:w-auto px-5 py-3 rounded-2xl bg-gradient-to-r from-cyan-400 via-cyan-500 to-blue-600 text-slate-950 font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/25 hover:scale-[1.02] active:scale-95 transition-all">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <span>+ Add New Faculty</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dynamic Teachers Grid Container -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="facultyGridContainer">
+                    <!-- Populated dynamically via JS -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Courses & Target Exams Section -->
+        <section id="courses" class="py-16 sm:py-20 relative border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12">
+                    <div>
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400">Targeted Curriculum</span>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white mt-1">Specialized Physics Batches</h2>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-2">Engineered specifically for NEET (Medical UG), IIT-JEE (Main + Advanced), and General Competitive examinations.</p>
+                    </div>
+                    <!-- Course Filter Tabs -->
+                    <div class="mt-6 md:mt-0 flex flex-wrap gap-2 glass-card p-1.5 rounded-2xl">
+                        <button onclick="filterCourses('all')" class="course-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 shadow-md" data-filter="all">All Batches</button>
+                        <button onclick="filterCourses('neet')" class="course-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all text-slate-400 hover:text-white" data-filter="neet">NEET (UG)</button>
+                        <button onclick="filterCourses('jee')" class="course-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all text-slate-400 hover:text-white" data-filter="jee">IIT-JEE</button>
+                        <button onclick="filterCourses('competitive')" class="course-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all text-slate-400 hover:text-white" data-filter="competitive">General Comp.</button>
+                    </div>
+                </div>
+
+                <!-- Course Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="courseGrid">
+                    
+                    <!-- Course 1: NEET Target 170+ -->
+                    <div class="course-card p-6 sm:p-7 rounded-3xl glass-card border border-emerald-500/40 flex flex-col justify-between hover:border-emerald-400 transition-all glow-cyan" data-category="neet">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-extrabold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-stethoscope"></i> NEET Flagship
+                                </span>
+                                <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1 text-cyan-400"></i> 1 Year / Target</span>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">NEET Physics 170+ Target Batch</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mb-4 leading-relaxed">
+                                Complete Class 11th & 12th NCERT line-by-line decoding, 35 years NEET chapter-wise solved PYQs, and high-speed numerical elimination strategies with Chandan Sir.
+                            </p>
+                            <ul class="text-xs space-y-2 text-slate-300 border-t border-slate-800/80 pt-4 mb-6">
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400 shrink-0"></i> Daily 45-Question Timed NEET Drills</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400 shrink-0"></i> NCERT-Extracted Assertion & Reasoning</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400 shrink-0"></i> 1-on-1 Doubt Clarification Desk</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Chandan Sir Batch</span>
+                                <div class="text-base sm:text-lg font-black text-emerald-300">Offline & Online</div>
+                            </div>
+                            <button onclick="openEnquiryModal('NEET Physics 170+ Target Batch')" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-slate-950 font-black text-xs transition-all shadow-md shadow-emerald-500/20">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Course 2: IIT-JEE Main + Advanced -->
+                    <div class="course-card p-6 sm:p-7 rounded-3xl glass-card border border-cyan-500/40 flex flex-col justify-between hover:border-cyan-400 transition-all glow-cyan" data-category="jee">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-extrabold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-atom"></i> IIT-JEE (Main + Adv)
+                                </span>
+                                <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1 text-cyan-400"></i> Comprehensive</span>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">IIT-JEE Physics Pinnacle Program</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mb-4 leading-relaxed">
+                                Rigorous analytical problem solving combining HC Verma, Irodov, and multi-concept questions designed specifically for top percentiles in JEE Main & Advanced.
+                            </p>
+                            <ul class="text-xs space-y-2 text-slate-300 border-t border-slate-800/80 pt-4 mb-6">
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-cyan-400 shrink-0"></i> Advanced Calculus-based mechanics</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-cyan-400 shrink-0"></i> Weekly JEE Pattern CBT Computer Tests</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-cyan-400 shrink-0"></i> Step-by-step problem dissection</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">JEE Physics Specialist</span>
+                                <div class="text-base sm:text-lg font-black text-cyan-300">Top Rankers Batch</div>
+                            </div>
+                            <button onclick="openEnquiryModal('IIT-JEE Pinnacle Program')" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-950 font-black text-xs transition-all shadow-md shadow-cyan-500/20">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Course 3: Class 11th & 12th Foundation -->
+                    <div class="course-card p-6 sm:p-7 rounded-3xl glass-card border border-slate-800 hover:border-blue-500/50 flex flex-col justify-between transition-all" data-category="jee">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-extrabold bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                                    Board + Competitive
+                                </span>
+                                <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1 text-cyan-400"></i> 2-Year Foundation</span>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">11th & 12th Physics Foundation</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mb-4 leading-relaxed">
+                                Complete CBSE & State Board derivations combined with competitive numerical grounding so students score 95%+ in boards while building an early JEE/NEET edge.
+                            </p>
+                            <ul class="text-xs space-y-2 text-slate-300 border-t border-slate-800/80 pt-4 mb-6">
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-cyan-400 shrink-0"></i> Concept building from vectors to modern physics</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-cyan-400 shrink-0"></i> Derivation sheets + numerical workbooks</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-cyan-400 shrink-0"></i> Regular parent-teacher progress updates</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">2-Year Structured</span>
+                                <div class="text-base sm:text-lg font-black text-white">Board + JEE/NEET</div>
+                            </div>
+                            <button onclick="openEnquiryModal('11th-12th Foundation Batch')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-cyan-500 hover:text-black text-cyan-400 font-bold text-xs transition-colors">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Course 4: General Competitive (Railway RRB / SSC) -->
+                    <div class="course-card p-6 sm:p-7 rounded-3xl glass-card border border-slate-800 hover:border-yellow-500/50 flex flex-col justify-between transition-all" data-category="competitive">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-extrabold bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">
+                                    RRB ALP / NTPC & SSC
+                                </span>
+                                <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1 text-cyan-400"></i> 3.5 Months</span>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">General Competitive Physics Batch</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mb-4 leading-relaxed">
+                                Tailored for Railway ALP/Technician, RRB NTPC, SSC CGL/CHSL, and State Exams. Master all previous 10 years numericals and concepts in simple bilingual Hindi/English.
+                            </p>
+                            <ul class="text-xs space-y-2 text-slate-300 border-t border-slate-800/80 pt-4 mb-6">
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-cyan-400 shrink-0"></i> 2000+ Solved RRB & SSC Physics Numericals</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-cyan-400 shrink-0"></i> 45-Second Shortcut Formula Methods</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-cyan-400 shrink-0"></i> Free High-Yield Bilingual PDF Notes</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Target Railway/SSC</span>
+                                <div class="text-base sm:text-lg font-black text-white">Full GS Physics</div>
+                            </div>
+                            <button onclick="openEnquiryModal('General Competitive Science Batch')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-yellow-400 hover:text-black text-yellow-400 font-bold text-xs transition-colors">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Course 5: NEET Dropper / Repeater Intensive -->
+                    <div class="course-card p-6 sm:p-7 rounded-3xl glass-card border border-slate-800 hover:border-rose-500/50 flex flex-col justify-between transition-all" data-category="neet">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-extrabold bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                                    Repeater / Dropper
+                                </span>
+                                <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1 text-cyan-400"></i> Full Term</span>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">NEET Physics Rank Booster</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mb-4 leading-relaxed">
+                                Built for aspirants who missed MBBS cutoff by 10-30 marks in Physics. Eliminates calculation silly mistakes and strengthens weak zones in Mechanics and Electrodynamics.
+                            </p>
+                            <ul class="text-xs space-y-2 text-slate-300 border-t border-slate-800/80 pt-4 mb-6">
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-cyan-400 shrink-0"></i> Targeted weak-spot diagnostics</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-cyan-400 shrink-0"></i> Daily 100-Question speed tests</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-cyan-400 shrink-0"></i> Strict OMR negative-marking control</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Rank Booster</span>
+                                <div class="text-base sm:text-lg font-black text-white">Dropper Special</div>
+                            </div>
+                            <button onclick="openEnquiryModal('NEET Droppers Rank Booster')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-rose-400 hover:text-black text-rose-300 font-bold text-xs transition-colors">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Course 6: Numerical Special Bootcamp -->
+                    <div class="course-card p-6 sm:p-7 rounded-3xl glass-card border border-slate-800 hover:border-purple-500/50 flex flex-col justify-between transition-all" data-category="jee">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-extrabold bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                                    Problem Mastery
+                                </span>
+                                <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1 text-cyan-400"></i> Intensive</span>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">JEE & NEET 1000 Numericals</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mb-4 leading-relaxed">
+                                Hand-picked multi-concept problems solving rotational motion, electromagnetic induction, ray optics, and modern physics to ensure peak confidence before test day.
+                            </p>
+                            <ul class="text-xs space-y-2 text-slate-300 border-t border-slate-800/80 pt-4 mb-6">
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-cyan-400 shrink-0"></i> Live step-by-step whiteboard derivations</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-cyan-400 shrink-0"></i> Short tricks to bypass lengthy calculations</li>
+                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-cyan-400 shrink-0"></i> Complete PDF solution bank with breakdown</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">High-Yield Practice</span>
+                                <div class="text-base sm:text-lg font-black text-white">Numerical Master</div>
+                            </div>
+                            <button onclick="openEnquiryModal('1000 Numericals Bootcamp')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-purple-400 hover:text-black text-purple-300 font-bold text-xs transition-colors">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Founding Mentor Profile (Er. R. K. Verma) -->
+        <section id="founder" class="py-16 sm:py-20 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="glass-card rounded-3xl p-6 sm:p-10 lg:p-12 border border-slate-800 relative overflow-hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                        
+                        <!-- Faculty Photo / Badge Column -->
+                        <div class="lg:col-span-5 flex flex-col items-center justify-center">
+                            <div class="relative w-full max-w-xs sm:max-w-sm flex flex-col items-center">
+                                <div class="w-full rounded-3xl bg-gradient-to-tr from-cyan-500/20 to-blue-600/30 border-2 border-cyan-400/30 p-2 sm:p-3 relative shadow-2xl">
+                                    <div class="w-full rounded-2xl bg-slate-950 flex flex-col items-center justify-center text-center p-5 sm:p-7">
+                                        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-3xl sm:text-4xl text-slate-950 mb-3 shadow-lg shrink-0">
+                                            <i class="fa-solid fa-user-tie"></i>
+                                        </div>
+                                        <div class="text-xl sm:text-2xl font-bold text-white">Er. R. K. Verma</div>
+                                        <p class="text-xs sm:text-sm text-cyan-400 font-medium mt-1">B.Tech (NIT) | Founding Physics Mentor</p>
+                                        <div class="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-yellow-400/10 text-yellow-300 text-[11px] sm:text-xs font-semibold border border-yellow-400/20 max-w-full text-center">
+                                            <i class="fa-solid fa-award shrink-0 text-yellow-400"></i> 
+                                            <span>12+ Years Competitive Experience</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Floating Badge -->
+                                <div class="mt-3 sm:mt-0 sm:absolute sm:-bottom-4 sm:-right-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white py-2.5 px-4 rounded-2xl shadow-xl flex items-center gap-3 border border-blue-400/30 z-10 w-full sm:w-auto justify-center sm:justify-start">
+                                    <i class="fa-solid fa-graduation-cap text-xl sm:text-2xl text-yellow-300 shrink-0"></i>
+                                    <div class="text-left">
+                                        <div class="text-xs font-bold leading-tight">5,000+</div>
+                                        <div class="text-[10px] text-blue-200">Govt Officers & Engineers Trained</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Faculty Bio Column -->
+                        <div class="lg:col-span-7 space-y-4 sm:space-y-6 pt-2 lg:pt-0">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-widest text-cyan-400">Founding Mentor & Advisor</span>
+                                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mt-1 leading-tight break-words">
+                                    "Physics is not a subject to cram; it is the language of nature."
+                                </h2>
+                            </div>
+                            <p class="text-slate-300 text-xs sm:text-sm lg:text-base leading-relaxed">
+                                With over a decade of dedicated competitive coaching, <strong>Er. R. K. Verma</strong> has decoded the patterns of Railway RRB, SSC, and Defense exams. His signature visual teaching style eliminates fear and empowers students from both arts and science backgrounds to score full marks in GS Physics.
+                            </p>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-1">
+                                <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+                                    <h3 class="text-cyan-400 font-bold text-xs sm:text-sm mb-1"><i class="fa-solid fa-bolt mr-1"></i> Unique Shortcut Techniques</h3>
+                                    <p class="text-[11px] sm:text-xs text-slate-300">Pioneer of the 3-step formula deduction method for competitive numerical questions.</p>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+                                    <h3 class="text-yellow-400 font-bold text-xs sm:text-sm mb-1"><i class="fa-solid fa-comments mr-1"></i> Bilingual Grounding</h3>
+                                    <p class="text-[11px] sm:text-xs text-slate-300">Fluent explanations in lucid Hindi & English so no concept stays ambiguous.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
+                                <button onclick="openEnquiryModal('Mentor Counseling Session - Verma Sir')" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-slate-800 hover:bg-cyan-500 hover:text-black text-cyan-400 border border-cyan-500/30 font-bold text-xs sm:text-sm transition-colors text-center">
+                                    Book Guidance Session
+                                </button>
+                                <span class="text-[11px] sm:text-xs text-slate-400 flex items-center justify-center sm:justify-start gap-2">
+                                    <i class="fa-solid fa-shield-halved text-emerald-400 shrink-0"></i> Free personal counseling for every new student
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive 60s Physics Demo / Mini-Quiz -->
+        <section id="demo" class="py-16 sm:py-20 border-t border-slate-800">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8 sm:mb-10">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400">Interactive Concept Test</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-white mt-1">Test Your Physics Level in 60 Seconds</h2>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-2">Sample question directly from recent competitive examinations:</p>
+                </div>
+
+                <div class="glass-card rounded-3xl p-5 sm:p-8 shadow-2xl glow-cyan">
+                    <div class="flex items-center justify-between text-xs text-slate-400 pb-4 border-b border-slate-800">
+                        <span class="font-bold text-cyan-400 flex items-center gap-1.5"><i class="fa-solid fa-circle-question"></i> Question 1 of 1</span>
+                        <span class="bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full text-[11px] border border-cyan-500/20 font-semibold">Exam: RRB NTPC / SSC GS / NEET</span>
+                    </div>
+
+                    <div class="py-5 sm:py-6">
+                        <p class="text-sm sm:text-lg font-bold text-slate-100 leading-snug">
+                            "If the momentum of a body is increased by 50%, its kinetic energy will increase by:"
+                        </p>
+                        <p class="text-xs text-slate-400 mt-1.5 italic">
+                            (यदि किसी वस्तु का संवेग 50% बढ़ा दिया जाए, तो उसकी गतिज ऊर्जा में कितने प्रतिशत की वृद्धि होगी?)
+                        </p>
+
+                        <!-- Quiz Options -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-5 sm:mt-6" id="quizOptions">
+                            <button onclick="checkAnswer(this, false)" class="quiz-btn text-left p-3.5 sm:p-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800/90 border border-slate-800 text-xs sm:text-sm text-slate-200 transition-all flex items-center justify-between">
+                                <span class="font-semibold">A) 50%</span>
+                                <i class="fa-regular fa-circle text-slate-500"></i>
+                            </button>
+                            <button onclick="checkAnswer(this, false)" class="quiz-btn text-left p-3.5 sm:p-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800/90 border border-slate-800 text-xs sm:text-sm text-slate-200 transition-all flex items-center justify-between">
+                                <span class="font-semibold">B) 100%</span>
+                                <i class="fa-regular fa-circle text-slate-500"></i>
+                            </button>
+                            <button onclick="checkAnswer(this, true)" class="quiz-btn text-left p-3.5 sm:p-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800/90 border border-slate-800 text-xs sm:text-sm text-slate-200 transition-all flex items-center justify-between">
+                                <span class="font-semibold">C) 125%</span>
+                                <i class="fa-regular fa-circle text-slate-500"></i>
+                            </button>
+                            <button onclick="checkAnswer(this, false)" class="quiz-btn text-left p-3.5 sm:p-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800/90 border border-slate-800 text-xs sm:text-sm text-slate-200 transition-all flex items-center justify-between">
+                                <span class="font-semibold">D) 150%</span>
+                                <i class="fa-regular fa-circle text-slate-500"></i>
+                            </button>
+                        </div>
+
+                        <!-- Feedback Box -->
+                        <div id="quizResult" class="hidden mt-5 sm:mt-6 p-4 rounded-2xl text-xs sm:text-sm leading-relaxed"></div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+                        <span class="text-xs text-slate-400 text-center sm:text-left">Want complete chapter-wise shortcut tricks?</span>
+                        <button onclick="openEnquiryModal('Free Demo Lectures PDF')" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-600 text-slate-950 font-black text-xs uppercase tracking-wider shadow-md">
+                            Get 100 Shortcut Tricks PDF (Free)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Toppers & Student Testimonials -->
+        <section id="results" class="py-16 sm:py-20 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400">Hall of Fame</span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white mt-1">Our Successful Candidates Speak</h2>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-2">Real reviews from students who mastered Physics and secured ranks in NEET, JEE & Government exams.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="p-6 sm:p-7 rounded-3xl glass-card flex flex-col justify-between relative">
+                        <i class="fa-solid fa-quote-right text-3xl sm:text-4xl text-slate-800 absolute top-5 right-5 pointer-events-none"></i>
+                        <div>
+                            <div class="flex text-yellow-400 text-xs gap-1 mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed italic">
+                                "Physics was always my biggest nightmare in NEET. Chandan Sir's numerical shortcuts and daily timed DPPs helped me score 172/180 in Physics. Cleared NEET and currently pursuing MBBS at AIIMS!"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-5 mt-5 border-t border-slate-800/80">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-400 to-blue-600 text-slate-950 font-black text-sm flex items-center justify-center shrink-0">
+                                AK
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold text-white">Amit Kumar</div>
+                                <div class="text-xs text-cyan-400 font-semibold">NEET Score: 685 (AIIMS Selection)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="p-6 sm:p-7 rounded-3xl glass-card flex flex-col justify-between relative">
+                        <i class="fa-solid fa-quote-right text-3xl sm:text-4xl text-slate-800 absolute top-5 right-5 pointer-events-none"></i>
+                        <div>
+                            <div class="flex text-yellow-400 text-xs gap-1 mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed italic">
+                                "Coming from a state board background, JEE Advanced mechanics seemed impossible. Chandan Sir's step-by-step vector breakdowns made complex problems straightforward. Scored 99.4 percentile in JEE Physics."
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-5 mt-5 border-t border-slate-800/80">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-yellow-400 to-amber-500 text-slate-950 font-black text-sm flex items-center justify-center shrink-0">
+                                PS
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold text-white">Pooja Sharma</div>
+                                <div class="text-xs text-yellow-400 font-semibold">IIT Delhi (Computer Science & Engg)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="p-6 sm:p-7 rounded-3xl glass-card flex flex-col justify-between relative">
+                        <i class="fa-solid fa-quote-right text-3xl sm:text-4xl text-slate-800 absolute top-5 right-5 pointer-events-none"></i>
+                        <div>
+                            <div class="flex text-yellow-400 text-xs gap-1 mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed italic">
+                                "The chapter-wise DPP and Sunday All-India mock test series gave me an unmatched competitive edge. If you are preparing for NDA, JEE, or Railway ALP, don't look anywhere else."
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-5 mt-5 border-t border-slate-800/80">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-400 to-teal-500 text-slate-950 font-black text-sm flex items-center justify-center shrink-0">
+                                RS
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold text-white">Rahul Singh</div>
+                                <div class="text-xs text-emerald-400 font-semibold">AIR 420 - JEE Advanced</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banner CTA -->
+                <div class="mt-12 sm:mt-16 bg-gradient-to-r from-blue-900 via-indigo-900 to-cyan-900 rounded-3xl p-6 sm:p-10 text-center relative overflow-hidden glow-cyan">
+                    <h3 class="text-xl sm:text-3xl font-black text-white">Ready to Secure Your Name on the Selection List?</h3>
+                    <p class="text-slate-200 text-xs sm:text-sm max-w-2xl mx-auto mt-2 font-normal">Attend 3 Days Free Offline/Online Demo Classes with zero initial commitment.</p>
+                    <div class="mt-5 sm:mt-6 flex flex-wrap justify-center gap-3 sm:gap-4">
+                        <button onclick="openEnquiryModal('Free 3-Day Demo Card CTA')" class="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-white text-slate-950 font-black text-xs sm:text-sm hover:bg-slate-100 shadow-xl transition-all">
+                            Register for 3-Day Free Demo
+                        </button>
+                        <a href="https://wa.me/919876543210?text=Hello%20Einstein%20Physics%20Classes,%20I%20am%20interested%20in%20demo%20classes" target="_blank" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 transition-all">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Location Section -->
+        <section id="contact" class="py-16 sm:py-20 relative border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+                    
+                    <!-- Contact Details Column -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div>
+                            <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400">Visit Or Connect</span>
+                            <h2 class="text-2xl sm:text-3xl font-black text-white mt-1">Get In Touch With Us</h2>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2">Walk in to our center for offline counseling, batch registrations, and free study material samples.</p>
+                        </div>
+
+                        <div class="space-y-3.5 pt-1">
+                            <div class="flex items-start gap-4 p-4 rounded-2xl glass-card">
+                                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0 border border-cyan-500/20">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">Center Address</h4>
+                                    <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                                        2nd Floor, Sai Complex, Opposite Gate No. 3, Coaching Hub Road, Patna, Bihar - 800001
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-4 rounded-2xl glass-card">
+                                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0 border border-cyan-500/20">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">Call / Helpline</h4>
+                                    <p class="text-xs text-slate-300 mt-1">+91 98765 43210 / +91 87654 32109</p>
+                                    <p class="text-[11px] text-slate-400">Available: Mon - Sat (07:00 AM to 08:00 PM)</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-4 rounded-2xl glass-card">
+                                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0 border border-cyan-500/20">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">Official Email</h4>
+                                    <p class="text-xs text-slate-300 mt-1">admissions@einsteinphysics.edu.in</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map Preview Card -->
+                        <div class="p-4 rounded-2xl glass-card flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-map-location-dot text-2xl text-cyan-400"></i>
+                                <span class="text-xs text-slate-300">Located 5 mins from Central Metro Station</span>
+                            </div>
+                            <a href="https://maps.google.com" target="_blank" class="px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-cyan-500 hover:text-black text-xs font-bold text-cyan-300 transition-colors">
+                                Open Map
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Direct Batch Inquiry Form -->
+                    <div class="lg:col-span-7">
+                        <div class="glass-card rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl glow-cyan">
+                            <h3 class="text-lg sm:text-xl font-bold text-white mb-1">Instant Batch Inquiry & Free Demo Form</h3>
+                            <p class="text-xs text-slate-400 mb-6">Fill your details below; our academic counselor will call you within 15 minutes.</p>
+
+                            <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-300 mb-1.5">Full Name *</label>
+                                        <input type="text" required placeholder="e.g. Vikas Kumar" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-100 text-xs sm:text-sm focus:outline-none focus:border-cyan-400 transition-colors">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-300 mb-1.5">Mobile Number (WhatsApp) *</label>
+                                        <input type="tel" pattern="[0-9]{10}" required placeholder="10-digit phone number" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-100 text-xs sm:text-sm focus:outline-none focus:border-cyan-400 transition-colors">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-300 mb-1.5">Target Competitive Exam *</label>
+                                        <select required class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-200 text-xs sm:text-sm focus:outline-none focus:border-cyan-400 transition-colors">
+                                            <option value="">Select Target Exam</option>
+                                            <option value="NEET 170+ Target (Chandan Sir)">NEET Physics (Target 170+)</option>
+                                            <option value="IIT-JEE Main + Advanced">IIT-JEE (Main + Advanced)</option>
+                                            <option value="11th & 12th Foundation">11th & 12th Foundation + Board</option>
+                                            <option value="RRB ALP / Technician">Railway RRB ALP / Technician</option>
+                                            <option value="SSC CGL / CHSL">SSC CGL / CHSL (General Awareness)</option>
+                                            <option value="Defense NDA / CDS">Defense (NDA / CDS / Airforce)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-300 mb-1.5">Classroom Mode *</label>
+                                        <select required class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-200 text-xs sm:text-sm focus:outline-none focus:border-cyan-400 transition-colors">
+                                            <option value="Offline Classroom">Offline Classroom Batch</option>
+                                            <option value="Live Online Interactive">Live Online Interactive Batch</option>
+                                            <option value="Recorded Hybrid Course">Recorded Hybrid Course + DPPs</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Any Specific Questions or Doubts?</label>
+                                    <textarea rows="3" placeholder="Tell us if you need help with numericals, timing preferences, etc." class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-100 text-xs sm:text-sm focus:outline-none focus:border-cyan-400 transition-colors"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-cyan-400 via-cyan-500 to-blue-600 text-slate-950 font-black text-xs sm:text-sm shadow-xl hover:shadow-cyan-400/30 transition-all uppercase tracking-wider">
+                                    Submit Inquiry & Request Call Back &rarr;
+                                </button>
+                                <p class="text-[11px] text-center text-slate-500">🔒 We respect your privacy. No spam guarantee.</p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#030611] border-t border-slate-800/80 text-slate-400 text-xs py-12 sm:py-14">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-10 sm:pb-12 border-b border-slate-800/80">
+                
+                <!-- Col 1: Institute Info -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-cyan-500 flex items-center justify-center text-slate-950 font-black text-lg">
+                            <i class="fa-solid fa-atom"></i>
+                        </div>
+                        <span class="font-bold text-white text-base tracking-tight">Einstein Physics Classes</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed pr-2 sm:pr-6">
+                        Dedicated exclusively to NEET, IIT-JEE, and competitive physics aspirants. Specializing in simplifying conceptual physics, multi-concept problems, and exam-tested numerical shortcuts.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-cyan-500 hover:text-black flex items-center justify-center text-slate-300 transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-cyan-500 hover:text-black flex items-center justify-center text-slate-300 transition-colors"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-cyan-500 hover:text-black flex items-center justify-center text-slate-300 transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-cyan-500 hover:text-black flex items-center justify-center text-slate-300 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h5 class="font-bold text-white uppercase tracking-wider text-xs mb-3 sm:mb-4">Quick Links</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-cyan-400 transition-colors">Home</a></li>
+                        <li><a href="#mentor-chandan" class="hover:text-cyan-400 transition-colors">Chandan Kumar Sir</a></li>
+                        <li><a href="#syllabus" class="hover:text-cyan-400 transition-colors">Physics Syllabus</a></li>
+                        <li><a href="#courses" class="hover:text-cyan-400 transition-colors">Target Batches</a></li>
+                        <li><a href="#results" class="hover:text-cyan-400 transition-colors">Selections Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Exams Covered -->
+                <div>
+                    <h5 class="font-bold text-white uppercase tracking-wider text-xs mb-3 sm:mb-4">Exams Covered</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#courses" class="hover:text-cyan-400 transition-colors">NEET (UG) 170+ Target</a></li>
+                        <li><a href="#courses" class="hover:text-cyan-400 transition-colors">IIT-JEE Main & Advanced</a></li>
+                        <li><a href="#courses" class="hover:text-cyan-400 transition-colors">11th & 12th Foundation</a></li>
+                        <li><a href="#courses" class="hover:text-cyan-400 transition-colors">RRB ALP / NTPC Physics</a></li>
+                        <li><a href="#courses" class="hover:text-cyan-400 transition-colors">SSC CGL / CHSL Physics</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Daily Timings -->
+                <div>
+                    <h5 class="font-bold text-white uppercase tracking-wider text-xs mb-3 sm:mb-4">Batch Hours</h5>
+                    <p class="text-xs leading-relaxed text-slate-400">
+                        <strong class="text-slate-300">Morning Shift:</strong><br>06:30 AM - 11:30 AM
+                    </p>
+                    <p class="text-xs leading-relaxed text-slate-400 mt-2">
+                        <strong class="text-slate-300">Evening Shift:</strong><br>03:30 PM - 08:30 PM
+                    </p>
+                    <p class="text-[11px] text-cyan-400 mt-2 font-medium">Sunday: Special All-India Test Series</p>
+                </div>
+            </div>
+
+            <div class="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px] text-center sm:text-left">
+                <p>&copy; <span id="currentYear"></span> Einstein Physics Classes. All Rights Reserved. Mentored by Chandan Sir.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:underline">Privacy Policy</a>
+                    <a href="#" class="hover:underline">Terms of Service</a>
+                    <a href="#" class="hover:underline">Student Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking / Demo Enquiry Modal -->
+    <div id="enquiryModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-700 w-full max-w-md rounded-3xl p-5 sm:p-8 shadow-2xl relative">
+            <button onclick="closeEnquiryModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center mb-5 sm:mb-6">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-cyan-400">Free Admission Counseling</span>
+                <h3 id="modalTitle" class="text-lg sm:text-xl font-bold text-white mt-1">Book Free Demo Seat</h3>
+                <p class="text-xs text-slate-400 mt-1">Enter your details to reserve your seat in the upcoming batch.</p>
+            </div>
+            <form onsubmit="handleModalSubmit(event)" class="space-y-3.5 sm:space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Your Name *</label>
+                    <input type="text" required placeholder="Enter full name" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-xs text-white focus:outline-none focus:border-cyan-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">WhatsApp Mobile Number *</label>
+                    <input type="tel" pattern="[0-9]{10}" required placeholder="10-digit mobile number" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-xs text-white focus:outline-none focus:border-cyan-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Target Exam *</label>
+                    <select required class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-xs text-white focus:outline-none focus:border-cyan-400">
+                        <option value="NEET 170+ Target (Chandan Sir)">NEET Physics (Target 170+)</option>
+                        <option value="IIT-JEE Main + Advanced">IIT-JEE (Main + Advanced)</option>
+                        <option value="11th & 12th Foundation">11th & 12th Foundation</option>
+                        <option value="RRB ALP / Technician">Railway RRB ALP / Tech</option>
+                        <option value="SSC CGL / CHSL">SSC CGL / CHSL</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-600 text-slate-950 font-bold text-xs uppercase tracking-wider">
+                    Confirm Free Demo Reservation &rarr;
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Adding New Faculty / Teacher Details -->
+    <div id="addFacultyModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-700 w-full max-w-lg rounded-3xl p-5 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <!-- Close Button -->
+            <button onclick="closeAddFacultyModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center gap-2 mb-1">
+                <span class="text-xs uppercase font-bold tracking-wider text-cyan-400"><i class="fa-solid fa-user-gear mr-1"></i> Admin Faculty Builder</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-white">Add New Teacher / Faculty Profile</h3>
+            <p class="text-xs text-slate-400 mt-1 mb-5">Add profile details for a new Physics faculty, Doubt Specialist, or Associate Mentor.</p>
+
+            <form onsubmit="handleNewFacultySubmit(event)" class="space-y-3.5 sm:space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Teacher Full Name *</label>
+                        <input id="newTeacherName" type="text" required placeholder="e.g. Prof. Arvind Kumar" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-xs text-white focus:outline-none focus:border-cyan-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Designation / Role *</label>
+                        <input id="newTeacherRole" type="text" required placeholder="e.g. Senior Numerical Specialist" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-xs text-white focus:outline-none focus:border-cyan-400">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Qualification *</label>
+                        <input id="newTeacherQual" type="text" required placeholder="e.g. M.Sc (Physics) / B.Tech" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-xs text-white focus:outline-none focus:border-cyan-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Teaching Experience *</label>
+                        <input id="newTeacherExp" type="text" required placeholder="e.g. 7+ Years Experience" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-xs text-white focus:outline-none focus:border-cyan-400">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Specialization Tags (comma separated)</label>
+                    <input id="newTeacherTags" type="text" placeholder="Mechanics, Electricity, NEET Numericals" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-xs text-white focus:outline-none focus:border-cyan-400">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Short Teaching Philosophy / Bio *</label>
+                    <textarea id="newTeacherBio" rows="3" required placeholder="e.g. Known for breaking down complex circuit theorems and wave optics into simple 2-step formulas." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-xs text-white focus:outline-none focus:border-cyan-400"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Avatar / Initials Icon (2 letters or emoji)</label>
+                    <input id="newTeacherAvatar" type="text" maxlength="4" placeholder="e.g. AK or ⚡" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-xs text-white focus:outline-none focus:border-cyan-400">
+                </div>
+
+                <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-600 text-slate-950 font-bold text-xs uppercase tracking-wider">
+                    Add Teacher Profile to Website &rarr;
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Toast Message Box -->
+    <div id="toastNotification" class="fixed bottom-5 right-5 z-50 hidden bg-gradient-to-r from-slate-900 to-slate-950 border border-cyan-400 text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 transition-all duration-300">
+        <div class="w-8 h-8 rounded-full bg-cyan-400/20 text-cyan-400 flex items-center justify-center">
+            <i class="fa-solid fa-check text-sm"></i>
+        </div>
+        <div>
+            <div class="text-xs font-bold text-white" id="toastTitle">Success!</div>
+            <div class="text-[11px] text-slate-300" id="toastDesc">We have recorded your details.</div>
+        </div>
+    </div>
+
+    <!-- Vanilla JavaScript for Interactive Behaviors -->
+    <script>
+        // Set Year in footer dynamically
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Scalable Faculty Data Structure (With Chandan Kumar Sir leading)
+        const facultyList = [
+            {
+                name: "Chandan Kumar Sir",
+                role: "HOD & Chief Physics Mentor (NEET / IIT-JEE)",
+                qualification: "Senior Physics Specialist | M.Sc / Tech",
+                experience: "10+ Years Mentoring Top Ranks",
+                avatar: "CK",
+                badge: "Chief Mentor & HOD",
+                badgeColor: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
+                bio: "Trained 500+ successful aspirants in NEET (MBBS) & IIT-JEE. Renowned for conceptual visualization, HC Verma / Irodov problem solving, and zero-cramming methodology.",
+                tags: ["NEET 170+ Target", "JEE Main & Advanced", "Mechanics & Optics", "Lead Faculty"]
+            },
+            {
+                name: "Prof. Arvind Sharma",
+                role: "Senior Associate Physics Faculty",
+                qualification: "M.Sc (Physics) Gold Medalist",
+                experience: "8+ Years Experience",
+                avatar: "AS",
+                badge: "Numerical Specialist",
+                badgeColor: "bg-yellow-500/10 text-yellow-400 border-yellow-500/20",
+                bio: "Specializes in high-speed numerical shortcuts, NCERT Class 11th-12th core concepts, and eliminating physics phobia among first-time aspirants.",
+                tags: ["Thermodynamics", "Modern Physics", "NCERT Line-by-Line", "Speed Drills"]
+            },
+            {
+                name: "Er. Saurabh Mishra",
+                role: "Doubt & Problem Solving Mentor",
+                qualification: "B.Tech | Physics Doubt Specialist",
+                experience: "5+ Years Experience",
+                avatar: "SM",
+                badge: "Doubt & DPP Specialist",
+                badgeColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+                bio: "Conducts daily 1-on-1 post-class doubt sessions and curates 20 Daily Practice Problem (DPP) sets based on previous 10 years papers.",
+                tags: ["Kinematics", "Sound & Waves", "1-on-1 Doubt Desk", "Telegram Support"]
+            }
+        ];
+
+        // Render Faculty Cards Function
+        function renderFacultyCards() {
+            const container = document.getElementById('facultyGridContainer');
+            if (!container) return;
+
+            let html = '';
+
+            facultyList.forEach((teacher) => {
+                const tagsHtml = teacher.tags.map(t => `<span class="px-2.5 py-1 rounded-lg bg-slate-950/80 border border-slate-800 text-[10px] text-slate-300 font-medium">${t}</span>`).join(' ');
+
+                html += `
+                    <div class="faculty-card p-6 sm:p-7 rounded-3xl glass-card hover:border-cyan-400/50 transition-all flex flex-col justify-between group glow-cyan">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-bold border ${teacher.badgeColor}">
+                                    ${teacher.badge}
+                                </span>
+                                <span class="text-xs text-yellow-400 flex items-center gap-1 font-semibold">
+                                    <i class="fa-solid fa-award"></i> ${teacher.experience}
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3.5 sm:gap-4 mb-4">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-cyan-400 via-blue-500 to-indigo-600 text-slate-950 font-black text-lg sm:text-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform shrink-0">
+                                    ${teacher.avatar}
+                                </div>
+                                <div>
+                                    <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">${teacher.name}</h3>
+                                    <p class="text-xs text-cyan-300 font-semibold">${teacher.role}</p>
+                                    <p class="text-[11px] text-slate-400">${teacher.qualification}</p>
+                                </div>
+                            </div>
+
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                "${teacher.bio}"
+                            </p>
+
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                ${tagsHtml}
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <span class="text-[11px] text-emerald-400 flex items-center gap-1.5 font-medium">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Offline & Live Batches
+                            </span>
+                            <button onclick="openEnquiryModal('Consult with ${teacher.name}')" class="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-cyan-400 hover:bg-cyan-500 hover:text-black text-xs font-bold text-slate-200 transition-all">
+                                Ask Mentor &rarr;
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Join the team CTA card at the end
+            html += `
+                <div class="p-6 rounded-3xl glass-card border-2 border-dashed border-slate-800 hover:border-cyan-500/40 flex flex-col items-center justify-center text-center p-6 sm:p-8 transition-all group">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-900 border border-slate-800 text-cyan-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-bold text-white">Join Our Physics Mentorship Panel?</h3>
+                    <p class="text-xs text-slate-400 mt-2 max-w-xs leading-relaxed">
+                        Are you an experienced Physics educator or competitive exam topper passionate about teaching?
+                    </p>
+                    <button onclick="openAddFacultyModal()" class="mt-5 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyan-400 border border-cyan-500/30 font-bold text-xs">
+                        + Add / Propose Faculty Profile
+                    </button>
+                </div>
+            `;
+
+            container.innerHTML = html;
+        }
+
+        // Initialize faculty rendering on load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderFacultyCards();
+        });
+
+        // Add Faculty Modal Functions
+        function openAddFacultyModal() {
+            document.getElementById('addFacultyModal').classList.remove('hidden');
+        }
+
+        function closeAddFacultyModal() {
+            document.getElementById('addFacultyModal').classList.add('hidden');
+        }
+
+        // Handle Add Faculty Submit
+        function handleNewFacultySubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('newTeacherName').value.trim();
+            const role = document.getElementById('newTeacherRole').value.trim();
+            const qual = document.getElementById('newTeacherQual').value.trim();
+            const exp = document.getElementById('newTeacherExp').value.trim();
+            const bio = document.getElementById('newTeacherBio').value.trim();
+            const rawTags = document.getElementById('newTeacherTags').value.trim();
+            let avatar = document.getElementById('newTeacherAvatar').value.trim();
+
+            if (!avatar) {
+                avatar = name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() || 'EP';
+            }
+
+            const tags = rawTags ? rawTags.split(',').map(t => t.trim()) : ["Physics Specialist", "General Science"];
+
+            facultyList.push({
+                name: name,
+                role: role,
+                qualification: qual,
+                experience: exp,
+                avatar: avatar,
+                badge: "Faculty Associate",
+                badgeColor: "bg-blue-500/10 text-blue-400 border-blue-500/20",
+                bio: bio,
+                tags: tags
+            });
+
+            renderFacultyCards();
+            closeAddFacultyModal();
+            e.target.reset();
+
+            showToast("Faculty Added Successfully!", `${name} has been added to the mentor showcase.`);
+        }
+
+        // Mobile Menu Drawer Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        // Close mobile drawer when clicking any link
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Course Tab Filtering Logic
+        function filterCourses(category) {
+            const buttons = document.querySelectorAll('.course-filter-btn');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.className = "course-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-cyan-500 text-slate-950";
+                } else {
+                    btn.className = "course-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all text-slate-400 hover:text-white";
+                }
+            });
+
+            const cards = document.querySelectorAll('.course-card');
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat === category || cardCat === 'all') {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Quick Quiz Check Logic
+        function checkAnswer(button, isCorrect) {
+            const allButtons = document.querySelectorAll('.quiz-btn');
+            allButtons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-70');
+            });
+
+            const resultBox = document.getElementById('quizResult');
+            resultBox.classList.remove('hidden');
+
+            if (isCorrect) {
+                button.classList.add('bg-emerald-950', 'border-emerald-500', 'text-emerald-200');
+                button.querySelector('i').className = "fa-solid fa-circle-check text-emerald-400";
+
+                resultBox.className = "mt-5 sm:mt-6 p-4 rounded-2xl text-xs sm:text-sm bg-emerald-950/70 border border-emerald-500/40 text-emerald-300";
+                resultBox.innerHTML = `<strong>Correct Answer! (125%)</strong><br>
+                <em>Explanation:</em> Kinetic Energy is proportional to Momentum squared: <code>KE = P² / (2m)</code>.<br>
+                If <code>P' = 1.5 P</code>, then <code>KE' = (1.5)² KE = 2.25 KE</code>. Increase = <strong>125%</strong>. You just solved an actual competitive exam question!`;
+            } else {
+                button.classList.add('bg-rose-950', 'border-rose-500', 'text-rose-200');
+                button.querySelector('i').className = "fa-solid fa-circle-xmark text-rose-400";
+
+                resultBox.className = "mt-5 sm:mt-6 p-4 rounded-2xl text-xs sm:text-sm bg-rose-950/70 border border-rose-500/40 text-rose-300";
+                resultBox.innerHTML = `<strong>Incorrect!</strong> The correct answer is <strong>C) 125%</strong>.<br>
+                <em>Why?</em> Because <code>KE = P² / 2m</code>. When <code>P</code> becomes 1.5 times, <code>KE</code> becomes <code>(1.5)² = 2.25</code> times, meaning a 125% increase. Learn this shortcut in class!`;
+            }
+        }
+
+        // Modal Functionality
+        const enquiryModal = document.getElementById('enquiryModal');
+        const modalTitle = document.getElementById('modalTitle');
+
+        function openEnquiryModal(courseOrSource = 'Book Free Demo Seat') {
+            modalTitle.textContent = courseOrSource;
+            enquiryModal.classList.remove('hidden');
+        }
+
+        function closeEnquiryModal() {
+            enquiryModal.classList.add('hidden');
+        }
+
+        // Close modal when clicking outside contents
+        enquiryModal.addEventListener('click', (e) => {
+            if (e.target === enquiryModal) {
+                closeEnquiryModal();
+            }
+        });
+
+        // Toast display utility (No window.alert)
+        function showToast(title, desc) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastDesc').textContent = desc;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 5000);
+        }
+
+        // Form handlers
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            e.target.reset();
+            showToast('Inquiry Received!', 'Thank you! Our physics counselor will call you within 15 minutes.');
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            e.target.reset();
+            closeEnquiryModal();
+            showToast('Demo Seat Reserved!', 'Your 3-day demo pass details have been sent via SMS/WhatsApp.');
+        }
+    </script>
+</body>
+</html>
